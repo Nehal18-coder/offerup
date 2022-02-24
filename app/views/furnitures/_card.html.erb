@@ -6,53 +6,39 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= furniture.title %></dd>
-      <!-- Display title end -->
 
       <dt>Photo</dt>
-      <!-- Display photo start -->
       <dd>
         <%= cl_image_tag @furniture.photo, class: "img-fluid" %>
       </dd>
-      <!-- Display photo end -->
 
       <dt>Category</dt>
-      <!-- Display category start -->
       <dd><%= furniture.category %></dd>
-      <!-- Display category end -->
 
       <dt>Price</dt>
-      <!-- Display price start -->
       <dd><%= furniture.price %></dd>
-      <!-- Display price end -->
 
       <dt>Google map</dt>
-      <!-- Display google_map start -->
       <dd>
         <div>
           <%= render partial: "furnitures/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display google_map end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @furniture.user.present? %>
           <%= link_to furniture.user, furniture.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Status</dt>
-      <!-- Display status_id start -->
       <dd>
         <% if @furniture.status.present? %>
           <%= link_to furniture.status, furniture.status %>
         <% end %>
       </dd>
-      <!-- Display status_id end -->
 
     </dl>
 
@@ -61,21 +47,17 @@
         <%= link_to_show_or_back furniture, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link furniture start -->
       <div class="col">
         <%= link_to edit_furniture_url(furniture), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link furniture end -->
 
-      <!-- Delete link furniture start -->
       <div class="col">
         <%= link_to furniture, method: :delete, data: { confirm: "Do you really want to delete this furniture?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link furniture end -->
     </div>
   </div>
 

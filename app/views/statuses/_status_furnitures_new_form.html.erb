@@ -1,70 +1,40 @@
-<!-- Form furniture start -->
 <%= form_with(model: @furniture, local: true) do |f| %>
-<!-- Form furniture end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_area :title, rows: "3", class: "form-control" %>
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <%= f.label :photo %>
 
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for category start -->
   <div class="form-group">
     <%= f.label :category %>
-    <!-- Input for category start -->
     <%= f.text_area :category, rows: "3", class: "form-control" %>
-    <!-- Input for category end -->
   </div>
-  <!-- Label and input for category end -->
 
-  <!-- Label and input for price start -->
   <div class="form-group">
     <%= f.label :price %>
 
-    <!-- Input for price start -->
     <%= f.text_field :price, class: "form-control" %>
-    <!-- Input for price end -->
   </div>
-  <!-- Label and input for price end -->
 
-  <!-- Label and input for google_map start -->
   <div class="form-group">
     <%= f.label :google_map %>
 
-    <!-- Input for google_map start -->
     <%= f.text_field :google_map, class: "form-control" %>
-    <!-- Input for google_map end -->
   </div>
-  <!-- Label and input for google_map end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <%= f.label :user_id %>
 
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for status_id start -->
-  <!-- Input for status_id start -->
   <%= f.hidden_field :status_id, value: @status.id %>
-  <!-- Input for status_id end -->
-  <!-- Label and input for status_id end -->
 
   <%= f.submit "Create furniture", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

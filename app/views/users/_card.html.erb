@@ -6,24 +6,16 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= user.name %></dd>
-      <!-- Display name end -->
 
       <dt>Email</dt>
-      <!-- Display email start -->
       <dd><%= user.email %></dd>
-      <!-- Display email end -->
 
       <dt>Password</dt>
-      <!-- Display password start -->
       <dd><%= user.password %></dd>
-      <!-- Display password end -->
 
       <dt>Furniture</dt>
-      <!-- Display furniture_id start -->
       <dd><%= user.furniture_id %></dd>
-      <!-- Display furniture_id end -->
 
     </dl>
 
@@ -32,21 +24,17 @@
         <%= link_to_show_or_back user, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link user start -->
       <div class="col">
         <%= link_to edit_user_url(user), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link user end -->
 
-      <!-- Delete link user start -->
       <div class="col">
         <%= link_to user, method: :delete, data: { confirm: "Do you really want to delete this user?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link user end -->
     </div>
   </div>
 

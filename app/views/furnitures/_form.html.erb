@@ -1,7 +1,6 @@
 <% was_validated = furniture.errors.any? %>
 
 <%= form_with(model: furniture, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for title start -->
   <div class="form-group">
     <% title_class = "form-control" %>
     <% title_was_invalid = furniture.errors.include?(:title) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_area :title, class: title_class, placeholder: "Enter title" %>
-    <!-- Input for title end -->
     <% if title_was_invalid %>
       <% furniture.errors.full_messages_for(:title).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for title end -->
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <% photo_class = "form-control" %>
     <% photo_was_invalid = furniture.errors.include?(:photo) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :photo %>
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
     <% if photo_was_invalid %>
       <% furniture.errors.full_messages_for(:photo).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for photo end -->
-  <!-- Label and input for category start -->
   <div class="form-group">
     <% category_class = "form-control" %>
     <% category_was_invalid = furniture.errors.include?(:category) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :category %>
-    <!-- Input for category start -->
     <%= f.text_area :category, class: category_class, placeholder: "Enter category" %>
-    <!-- Input for category end -->
     <% if category_was_invalid %>
       <% furniture.errors.full_messages_for(:category).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for category end -->
-  <!-- Label and input for price start -->
   <div class="form-group">
     <% price_class = "form-control" %>
     <% price_was_invalid = furniture.errors.include?(:price) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :price %>
-    <!-- Input for price start -->
     <%= f.text_field :price, class: price_class, placeholder: "Enter price" %>
-    <!-- Input for price end -->
     <% if price_was_invalid %>
       <% furniture.errors.full_messages_for(:price).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for price end -->
-  <!-- Label and input for google_map start -->
   <div class="form-group">
     <% google_map_class = "form-control" %>
     <% google_map_was_invalid = furniture.errors.include?(:google_map) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :google_map %>
-    <!-- Input for google_map start -->
     <%= f.text_field :google_map, class: google_map_class, placeholder: "Enter google map" %>
-    <!-- Input for google_map end -->
     <% if google_map_was_invalid %>
       <% furniture.errors.full_messages_for(:google_map).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for google_map end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = furniture.errors.include?(:user) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% furniture.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,8 +133,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
-  <!-- Label and input for status_id start -->
   <div class="form-group">
     <% status_class = "form-control" %>
     <% status_was_invalid = furniture.errors.include?(:status) %>
@@ -171,9 +146,7 @@
     <% end %>
 
     <%= f.label :status_id %>
-    <!-- Input for status_id start -->
     <%= f.collection_select :status_id, Status.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for status_id end -->
     <% if status_was_invalid %>
       <% furniture.errors.full_messages_for(:status).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -182,6 +155,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for status_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
