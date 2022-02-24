@@ -12,6 +12,8 @@ class FurnitureResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :status
+
   belongs_to :user
 
   # Indirect associations
