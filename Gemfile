@@ -40,3 +40,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rubocop-rails', '2.5.2', require: false
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'coffee-rails'
