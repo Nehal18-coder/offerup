@@ -8,6 +8,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/1
   def show
+    @furniture = Furniture.new
   end
 
   # GET /statuses/new

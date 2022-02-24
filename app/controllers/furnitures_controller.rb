@@ -24,7 +24,12 @@ class FurnituresController < ApplicationController
     @furniture = Furniture.new(furniture_params)
 
     if @furniture.save
-      redirect_to @furniture, notice: 'Furniture was successfully created.'
+      message = 'Furniture was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @furniture, notice: message
+      end
     else
       render :new
     end
