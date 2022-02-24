@@ -68,3 +68,5 @@ end
 gem 'rack-cors'
 gem 'devise-jwt', '~> 0.8.1'
 gem "rollbar"
+gem "kaminari"
+gem "bootstrap4-kaminari-views"

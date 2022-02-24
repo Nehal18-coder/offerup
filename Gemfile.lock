@@ -113,6 +113,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
+    bootstrap4-kaminari-views (1.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.4)
     byebug (11.1.3)
     carrierwave (2.2.2)
@@ -446,6 +449,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (= 2.2.0)
   bootsnap (>= 1.4.2)
+  bootstrap4-kaminari-views
   byebug
   carrierwave
   carrierwave-base64
@@ -462,6 +466,7 @@ DEPENDENCIES
   graphiti_spec_helpers
   ideas_generators!
   jbuilder (~> 2.7)
+  kaminari
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)

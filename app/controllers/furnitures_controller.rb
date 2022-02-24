@@ -3,7 +3,7 @@ class FurnituresController < ApplicationController
 
   # GET /furnitures
   def index
-    @furnitures = Furniture.all
+    @furnitures = Furniture.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@furnitures.where.not(:google_map_latitude => nil)) do |furniture, marker|
       marker.lat furniture.google_map_latitude
       marker.lng furniture.google_map_longitude
