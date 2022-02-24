@@ -1,26 +1,21 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: %i[show edit update destroy]
 
-  # GET /statuses
   def index
     @q = Status.ransack(params[:q])
     @statuses = @q.result(distinct: true).includes(:furnitures).page(params[:page]).per(10)
   end
 
-  # GET /statuses/1
   def show
     @furniture = Furniture.new
   end
 
-  # GET /statuses/new
   def new
     @status = Status.new
   end
 
-  # GET /statuses/1/edit
   def edit; end
 
-  # POST /statuses
   def create
     @status = Status.new(status_params)
 
@@ -31,7 +26,6 @@ class StatusesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /statuses/1
   def update
     if @status.update(status_params)
       redirect_to @status, notice: "Status was successfully updated."
@@ -40,7 +34,6 @@ class StatusesController < ApplicationController
     end
   end
 
-  # DELETE /statuses/1
   def destroy
     @status.destroy
     redirect_to statuses_url, notice: "Status was successfully destroyed."
@@ -48,12 +41,10 @@ class StatusesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_status
     @status = Status.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def status_params
     params.require(:status).permit(:furniture_id)
   end
