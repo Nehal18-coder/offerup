@@ -38,12 +38,20 @@
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= furniture.user_id %></dd>
+      <dd>
+        <% if @furniture.user.present? %>
+          <%= link_to furniture.user, furniture.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Status</dt>
       <!-- Display status_id start -->
-      <dd><%= furniture.status_id %></dd>
+      <dd>
+        <% if @furniture.status.present? %>
+          <%= link_to furniture.status, furniture.status %>
+        <% end %>
+      </dd>
       <!-- Display status_id end -->
 
     </dl>
