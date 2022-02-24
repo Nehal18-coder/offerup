@@ -172,7 +172,7 @@
 
     <%= f.label :status_id %>
     <!-- Input for status_id start -->
-    <%= f.number_field :status_id, class: status_class, placeholder: "Enter status" %>
+    <%= f.collection_select :status_id, Status.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for status_id end -->
     <% if status_was_invalid %>
       <% furniture.errors.full_messages_for(:status).each do |message| %>

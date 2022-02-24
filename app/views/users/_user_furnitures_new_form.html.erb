@@ -61,7 +61,7 @@
     <%= f.label :status_id %>
 
     <!-- Input for status_id start -->
-    <%= f.text_field :status_id, class: "form-control" %>
+    <%= f.collection_select :status_id, Status.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for status_id end -->
   </div>
   <!-- Label and input for status_id end -->
