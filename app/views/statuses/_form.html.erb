@@ -1,0 +1,31 @@
+<% was_validated = status.errors.any? %>
+
+<%= form_with(model: status, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for furniture_id start -->
+  <div class="form-group">
+    <% furniture_class = "form-control" %>
+    <% furniture_was_invalid = status.errors.include?(:furniture) %>
+
+    <% if was_validated %>
+      <% if furniture_was_invalid %>
+        <% furniture_class << " is-invalid" %>
+      <% else %>
+        <% furniture_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :furniture_id %>
+    <!-- Input for furniture_id start -->
+    <%= f.number_field :furniture_id, class: furniture_class, placeholder: "Enter furniture" %>
+    <!-- Input for furniture_id end -->
+    <% if furniture_was_invalid %>
+      <% status.errors.full_messages_for(:furniture).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for furniture_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

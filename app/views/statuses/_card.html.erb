@@ -1,0 +1,41 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Status #<%= status.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Furniture</dt>
+      <!-- Display furniture_id start -->
+      <dd><%= status.furniture_id %></dd>
+      <!-- Display furniture_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back status, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link status start -->
+      <div class="col">
+        <%= link_to edit_status_url(status), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link status end -->
+
+      <!-- Delete link status start -->
+      <div class="col">
+        <%= link_to status, method: :delete, data: { confirm: "Do you really want to delete this status?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link status end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(status.updated_at) %> ago
+  </div>
+</div>
