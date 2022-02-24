@@ -1,6 +1,9 @@
 class Status < ApplicationRecord
   # Direct associations
 
+  has_many   :furnitures,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

@@ -4,6 +4,8 @@ RSpec.describe Status, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:furnitures) }
+
     end
 
     describe "InDirect Associations" do
