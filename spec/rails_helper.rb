@@ -63,6 +63,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
+GraphitiSpecHelpers::RSpec.schema!
+
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
 
