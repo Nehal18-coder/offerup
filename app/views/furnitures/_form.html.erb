@@ -146,7 +146,7 @@
 
     <%= f.label :user_id %>
     <!-- Input for user_id start -->
-    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% furniture.errors.full_messages_for(:user).each do |message| %>

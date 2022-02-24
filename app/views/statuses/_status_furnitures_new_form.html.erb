@@ -55,7 +55,7 @@
     <%= f.label :user_id %>
 
     <!-- Input for user_id start -->
-    <%= f.text_field :user_id, class: "form-control" %>
+    <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for user_id end -->
   </div>
   <!-- Label and input for user_id end -->
