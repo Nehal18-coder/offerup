@@ -41,3 +41,5 @@ gem 'rubocop-rails', '2.5.2', require: false
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'coffee-rails'
+gem 'rspec-rails'
+gem 'shoulda-matchers'
