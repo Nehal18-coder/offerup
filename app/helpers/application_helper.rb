@@ -1,4 +1,13 @@
 module ApplicationHelper
+
+  def collapse_search_form
+    if params[:q].blank?
+      "collapse"
+    else
+      ""
+    end
+  end
+
   def link_to_show_or_back(
         object,
         show_content = "Show",
