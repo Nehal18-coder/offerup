@@ -1,0 +1,39 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1 class="display-4">
+      Users
+
+      <%= link_to new_user_path, class: "btn btn-lg btn-outline-secondary" do %>
+        <i class="fas fa-plus fa-fw"></i>
+      <% end %>
+    </h1>
+  </div>
+</div>
+
+  <!-- Ransack Code start -->
+
+  <!-- Ransack Code end -->
+
+  <!-- Location Map Code start -->
+
+  <!-- Location Map Code end -->
+
+<!-- List group example -->
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-8">
+    <div class="card">
+      <h1 class="card-header h4 d-flex align-items-center justify-content-between">
+        Users
+
+        <%= link_to new_user_path, class: "btn btn-sm btn-outline-secondary" do %>
+          <i class="fas fa-plus fa-fw"></i>
+        <% end %>
+      </h1>
+
+      <div class="list-group list-group-flush">
+        <%= render collection: @users, partial: "list_item", as: :user %>
+      </div>
+    </div>
+  </div>
+</div>

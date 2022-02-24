@@ -1,0 +1,109 @@
+<% was_validated = user.errors.any? %>
+
+<%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = user.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+    <!-- Input for name start -->
+    <%= f.text_area :name, class: name_class, placeholder: "Enter name" %>
+    <!-- Input for name end -->
+    <% if name_was_invalid %>
+      <% user.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for name end -->
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <% email_class = "form-control" %>
+    <% email_was_invalid = user.errors.include?(:email) %>
+
+    <% if was_validated %>
+      <% if email_was_invalid %>
+        <% email_class << " is-invalid" %>
+      <% else %>
+        <% email_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :email %>
+    <!-- Input for email start -->
+    <%= f.text_field :email, class: email_class, placeholder: "Enter email" %>
+    <!-- Input for email end -->
+    <% if email_was_invalid %>
+      <% user.errors.full_messages_for(:email).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for email end -->
+  <!-- Label and input for password start -->
+  <div class="form-group">
+    <% password_class = "form-control" %>
+    <% password_was_invalid = user.errors.include?(:password) %>
+
+    <% if was_validated %>
+      <% if password_was_invalid %>
+        <% password_class << " is-invalid" %>
+      <% else %>
+        <% password_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :password %>
+    <!-- Input for password start -->
+    <%= f.text_field :password, class: password_class, placeholder: "Enter password" %>
+    <!-- Input for password end -->
+    <% if password_was_invalid %>
+      <% user.errors.full_messages_for(:password).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for password end -->
+  <!-- Label and input for furniture_id start -->
+  <div class="form-group">
+    <% furniture_class = "form-control" %>
+    <% furniture_was_invalid = user.errors.include?(:furniture) %>
+
+    <% if was_validated %>
+      <% if furniture_was_invalid %>
+        <% furniture_class << " is-invalid" %>
+      <% else %>
+        <% furniture_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :furniture_id %>
+    <!-- Input for furniture_id start -->
+    <%= f.number_field :furniture_id, class: furniture_class, placeholder: "Enter furniture" %>
+    <!-- Input for furniture_id end -->
+    <% if furniture_was_invalid %>
+      <% user.errors.full_messages_for(:furniture).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for furniture_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
