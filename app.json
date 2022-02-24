@@ -1,0 +1,54 @@
+{
+  "name": "offerup",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails dev:prime"
+  },
+  "env": {
+    "ROLLBAR_ACCESS_TOKEN": {
+      "required": true,
+      "value": "d747d085c99c443aa2bd0e9cb975e05c"
+    },
+    "SECRET_KEY_BASE": {
+      "required": true,
+      "generator": "secret"
+    },
+    "LANG": {
+      "required": true,
+      "value": "en_US.UTF-8"
+    },
+    "RACK_ENV": {
+      "required": true,
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "required": true,
+      "value": "production"
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true,
+      "value": "enabled"
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true,
+      "value": "enabled"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    }
+  ]
+}
