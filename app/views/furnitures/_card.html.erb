@@ -29,7 +29,11 @@
 
       <dt>Google map</dt>
       <!-- Display google_map start -->
-      <dd><%= furniture.google_map %></dd>
+      <dd>
+        <div>
+          <%= render partial: "furnitures/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display google_map end -->
 
       <dt>User</dt>

@@ -4,6 +4,11 @@ class FurnituresController < ApplicationController
   # GET /furnitures
   def index
     @furnitures = Furniture.all
+    @location_hash = Gmaps4rails.build_markers(@furnitures.where.not(:google_map_latitude => nil)) do |furniture, marker|
+      marker.lat furniture.google_map_latitude
+      marker.lng furniture.google_map_longitude
+      marker.infowindow "<h5><a href='/furnitures/#{furniture.id}'>#{furniture.id}</a></h5><small>#{furniture.google_map_formatted_address}</small>"
+    end
   end
 
   # GET /furnitures/1
