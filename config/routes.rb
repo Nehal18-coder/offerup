@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "furnitures#index"
   resources :statuses
   resources :users
   resources :furnitures
