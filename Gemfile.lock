@@ -5,6 +5,18 @@ GIT
     ideas_generators (0.1.0)
       railties
 
+GIT
+  remote: https://github.com/firstdraft/web_git.git
+  revision: a2be64e762eb0d79a204ab8cf941e99c1b2a2a8d
+  specs:
+    web_git (0.1.0)
+      actionview
+      ansispan
+      diffy
+      git
+      sinatra
+      tzinfo-data
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,6 +75,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    ansispan (0.0.1)
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.10.3)
@@ -79,9 +92,12 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     diff-lcs (1.5.0)
+    diffy (3.4.0)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    git (1.10.2)
+      rchardet (~> 1.8)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -103,6 +119,8 @@ GEM
     mini_mime (1.1.2)
     minitest (5.15.0)
     msgpack (1.4.5)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
     nio4r (2.5.8)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
@@ -114,6 +132,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-protection (2.2.0)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.4.6)
@@ -147,6 +167,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rchardet (1.8.0)
     regexp_parser (2.2.1)
     rexml (3.2.5)
     rspec-core (3.11.0)
@@ -182,6 +203,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 0.72.0)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -195,6 +217,11 @@ GEM
       tilt
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
+    sinatra (2.2.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.0)
+      tilt (~> 2.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -207,6 +234,8 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.5)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -239,6 +268,7 @@ DEPENDENCIES
   sprockets-rails
   tzinfo-data
   web-console (>= 3.3.0)
+  web_git!
 
 RUBY VERSION
    ruby 2.7.3p183

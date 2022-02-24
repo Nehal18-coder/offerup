@@ -44,3 +44,4 @@ gem 'coffee-rails'
 gem 'rspec-rails'
 gem 'shoulda-matchers'
 gem 'ideas_generators', github: 'firstdraft/ideas_generators'
+gem 'web_git', github: 'firstdraft/web_git', group: :development
