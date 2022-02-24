@@ -12,7 +12,9 @@
 
       <dt>Photo</dt>
       <!-- Display photo start -->
-      <dd><%= furniture.photo %></dd>
+      <dd>
+        <%= cl_image_tag @furniture.photo, class: "img-fluid" %>
+      </dd>
       <!-- Display photo end -->
 
       <dt>Category</dt>

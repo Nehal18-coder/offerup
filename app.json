@@ -4,6 +4,15 @@
     "postdeploy": "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails dev:prime"
   },
   "env": {
+    "CLOUDINARY_CLOUD_NAME":{
+      "required":true
+    },
+    "CLOUDINARY_API_KEY":{
+      "required":true
+    },
+    "CLOUDINARY_API_SECRET":{
+      "required":true
+    },
     "ROLLBAR_ACCESS_TOKEN": {
       "required": true,
       "value": "d747d085c99c443aa2bd0e9cb975e05c"

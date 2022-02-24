@@ -42,7 +42,7 @@
 
     <%= f.label :photo %>
     <!-- Input for photo start -->
-    <%= f.text_field :photo, class: photo_class, placeholder: "Enter photo" %>
+    <%= f.file_field :photo, class: "form-control" %>
     <!-- Input for photo end -->
     <% if photo_was_invalid %>
       <% furniture.errors.full_messages_for(:photo).each do |message| %>

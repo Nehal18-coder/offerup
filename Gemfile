@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem "dotenv-rails"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -46,3 +47,6 @@ gem 'shoulda-matchers'
 gem 'ideas_generators', github: 'firstdraft/ideas_generators'
 gem 'web_git', github: 'firstdraft/web_git', group: :development
 gem 'activeadmin', '2.2.0'
+gem 'carrierwave'
+gem 'carrierwave-base64'
+gem 'cloudinary'
