@@ -13,7 +13,7 @@ class Api::V1::FurnituresController < Api::V1::GraphitiController
     furniture = FurnitureResource.build(params)
 
     if furniture.save
-      render jsonapi: furniture, status: 201
+      render jsonapi: furniture, status: :created
     else
       render jsonapi_errors: furniture
     end
@@ -33,7 +33,7 @@ class Api::V1::FurnituresController < Api::V1::GraphitiController
     furniture = FurnitureResource.find(params)
 
     if furniture.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: furniture
     end

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Direct associations
 
   has_many   :furnitures,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class User < ApplicationRecord
   def to_s
     id
   end
-
 end

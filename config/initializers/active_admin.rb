@@ -127,7 +127,7 @@ ActiveAdmin.setup do |config|
   config.comments = false
   #
   # You can change the name under which comments are registered:
-  config.comments_registration_name = 'AdminComment'
+  config.comments_registration_name = "AdminComment"
   #
   # You can change the order for the comments and you can change the column
   # to be used for ordering:
@@ -157,7 +157,8 @@ ActiveAdmin.setup do |config|
   # You can exclude possibly sensitive model attributes from being displayed,
   # added to forms, or exported by default by ActiveAdmin
   #
-  config.filter_attributes = [:encrypted_password, :password, :password_confirmation]
+  config.filter_attributes = %i[encrypted_password password
+                                password_confirmation]
 
   # == Localize Date/Time Format
   #

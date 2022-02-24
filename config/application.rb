@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -26,22 +26,22 @@ module Offerup
     # the rails server settings.
     # Rails::Server is not defined in console or rake tasks, so this will only
     # use those defaults when they are available.
-    routes.default_url_options[:host] = ENV.fetch('HOST') do
+    routes.default_url_options[:host] = ENV.fetch("HOST") do
       if defined?(Rails::Server)
         argv_options = Rails::Server::Options.new.parse!(ARGV)
         "http://#{argv_options[:Host]}:#{argv_options[:Port]}"
       end
     end
 
-      config.generators do |generate|
-        generate.helper false
-        generate.javascripts false
-        generate.request_specs false
-        generate.routing_specs false
-        generate.stylesheets false
-        generate.test_framework :rspec
-        generate.view_specs false
-      end
+    config.generators do |generate|
+      generate.helper false
+      generate.javascripts false
+      generate.request_specs false
+      generate.routing_specs false
+      generate.stylesheets false
+      generate.test_framework :rspec
+      generate.view_specs false
+    end
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0

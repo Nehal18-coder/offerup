@@ -2,7 +2,7 @@ class Status < ApplicationRecord
   # Direct associations
 
   has_many   :furnitures,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class Status < ApplicationRecord
   def to_s
     furniture_id
   end
-
 end

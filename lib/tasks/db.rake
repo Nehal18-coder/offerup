@@ -4,12 +4,10 @@ namespace :db do
     connection = ActiveRecord::Base.connection
     tables = connection.tables
     tables.each do |table|
-      begin
-        puts "Deleting #{table}"
-        connection.drop_table(table, force: :cascade)
-      rescue => e
-        puts e.message
-      end
+      puts "Deleting #{table}"
+      connection.drop_table(table, force: :cascade)
+    rescue StandardError => e
+      puts e.message
     end
   end
 end

@@ -1,10 +1,10 @@
-require 'open-uri'
+require "open-uri"
 class Furniture < ApplicationRecord
   before_validation :geocode_google_map
 
   def geocode_google_map
-    if self.google_map.present?
-      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(self.google_map)}"
+    if google_map.present?
+      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(google_map)}"
 
       raw_data = open(url).read
 
@@ -36,5 +36,4 @@ class Furniture < ApplicationRecord
   def to_s
     id
   end
-
 end

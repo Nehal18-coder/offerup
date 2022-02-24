@@ -6,8 +6,7 @@ class StatusResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :furnitures
+  has_many :furnitures
 
   # Indirect associations
-
 end
